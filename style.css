@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -23,6 +23,7 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  width: 50vw
 }
 
 .time-block{
@@ -40,6 +41,10 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  font-size: 2rem;
+  height:100%;
+  font-weight: 700;
+  width:5vw;
 }
 
 .past {
