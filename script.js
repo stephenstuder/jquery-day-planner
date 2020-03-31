@@ -24,21 +24,22 @@ for (let i = 0; i < workHours; i++){
     //Logic that colors blocked based on time TODO
 }
 
+//Loop over divs and color backgrounds
 $(".append-time-block").each(function(){
     var testdata = $(this).attr('data-time');
     console.log(testdata);
       if (testdata - Number(m.format("H")) === 0) {
-            $(this).removeClass("past");
-            $(this).removeClass("future");
-            $(this).addClass("present");
+            $(this).children("div:first").removeClass("past");
+            $(this).children("div:first").removeClass("future");
+            $(this).children("div:first").addClass("present");
         } else if (testdata - Number(m.format("H")) < 0){
-            $(this).removeClass("future");
-            $(this).removeClass("present");
-            $(this).addClass("past");
+            $(this).children("div:first").removeClass("future");
+            $(this).children("div:first").removeClass("present");
+            $(this).children("div:first").addClass("past");
         } else {
-            $(this).removeClass("past");
-            $(this).removeClass("present");
-            $(this).addClass("future");
+            $(this).children("div:first").removeClass("past");
+            $(this).children("div:first").removeClass("present");
+            $(this).children("div:first").addClass("future");
                 
       }
 });
