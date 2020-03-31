@@ -5,7 +5,7 @@ console.log(m.toString());
 console.log(m.format("hh"));
 
 //Display the current day
-$("#currentDay").text("Today's date: " + m.format("dddd MMMM Mo, YYYY"));
+$("#currentDay").text("Today's date: " + m.format("dddd MMMM DD, YYYY"));
 
 //Dynamic creation of hour blocks using jQuery with data-time for time
 const workHours = 9;
