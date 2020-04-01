@@ -54,4 +54,5 @@ function convertToTime(number){
         number = `${number-12}PM`;
     } return number;
 }
+
 //Button listener that saves content to local storage
