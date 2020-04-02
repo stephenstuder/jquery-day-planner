@@ -55,12 +55,14 @@ let plannerText = [];
 plannerText.length = workHours + startHour;
 
 init();
+fillFromLocal();
 
 $(".saveBtn").on("click", function(){
     let textBox = $(this).prev("textarea");
     let textValue = textBox[0].value;
     
     let timeValue = textBox.parent("div").parent("div").attr("data-time");
+    console.log(textValue);
    
     plannerText[timeValue] = textValue;
     console.log(plannerText);
@@ -68,28 +70,25 @@ $(".saveBtn").on("click", function(){
 })
 
 function saveToLocal(){
-    localStorage.setItem(JSON.stringify("plannerStorage"), plannerText);
+    localStorage.setItem("plannerStorage", JSON.stringify(plannerText));
 }
 
 function fillFromLocal(){
-    let storedLeaderboard = JSON.parse(localStorage.getItem("plannerStorage"));
-    console.log(storedLeaderboard);
     $(".saveBtn").each(function(){
-        let textBox = $(this).prev("textarea");
-        let textValue = textBox[0].value;
-        let timeValue = textBox.parent("div").parent("div").attr("data-time");
-        $.each(storedLeaderboard, function(key, valueObj){
-            if (timeValue == storedLeaderboard.indexOf[key]){
-                //textBox.append(valueObj);
+         let textBox = $(this).prev("textarea");
+         let textValue = textBox[0].value;
+         let timeValue = textBox.parent("div").parent("div").attr("data-time");
+         for (var i = 0; i < plannerText.length; i++) {
+             if (timeValue == i){
+                 textBox.val(plannerText[i]);
+             }
             }
-        })
-    });
+         });
 }
-fillFromLocal();
 
 function init(){
-    let oldItems = JSON.parse(localStorage.getItem("plannerStorage"));
-    plannerText = oldItems;
+    plannerText = JSON.parse(localStorage.getItem("plannerStorage"));
+    
 }
 
 //Button listener that saves content to local storage
