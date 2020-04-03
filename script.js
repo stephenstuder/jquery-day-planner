@@ -87,8 +87,9 @@ function fillFromLocal(){
 }
 
 function init(){
-    plannerText = JSON.parse(localStorage.getItem("plannerStorage"));
-    
+    if (localStorage.getItem("plannerStorage") !== null){
+        plannerText = JSON.parse(localStorage.getItem("plannerStorage"));
+    }
 }
 
 //Button listener that saves content to local storage
