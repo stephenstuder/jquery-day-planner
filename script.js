@@ -1,4 +1,4 @@
-//Displaying and formatting dates and times
+// Used to initialize moment.js
 const m = moment();
 
 //Display the current day
@@ -19,7 +19,6 @@ for (let i = 0; i < workHours; i++){
     <img class="saveBtn button" src="./images/save.png" width="80">
     </div>
     </div>`).appendTo($("#planner"));
-    //Logic that colors blocked based on time TODO
 }
 
 //Loop over divs and color backgrounds
@@ -54,18 +53,16 @@ function convertToTime(number){
 let plannerText = [];
 plannerText.length = workHours + startHour;
 
+//init will get localstorage only if it exists
 init();
 fillFromLocal();
 
 $(".saveBtn").on("click", function(){
     let textBox = $(this).prev("textarea");
-    let textValue = textBox[0].value;
-    
+    let textValue = textBox[0].value;  
     let timeValue = textBox.parent("div").parent("div").attr("data-time");
-    console.log(textValue);
    
     plannerText[timeValue] = textValue;
-    console.log(plannerText);
     saveToLocal();
 })
 
