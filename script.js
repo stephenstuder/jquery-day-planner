@@ -54,6 +54,10 @@ function convertToTime(number){
 let plannerText = [];
 plannerText.length = workHours + startHour;
 
+$("#clear").on("click", function(){
+     $(".description").val('');
+     localStorage.clear();
+})
 //init will get localstorage only if it exists
 init();
 fillFromLocal();
