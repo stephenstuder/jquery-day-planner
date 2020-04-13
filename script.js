@@ -21,6 +21,7 @@ for (let i = 0; i < workHours; i++){
     </div>`).appendTo($("#planner"));
 }
 
+
 //Loop over divs and color backgrounds
 $(".append-time-block").each(function(){
     var testdata = $(this).attr('data-time');
