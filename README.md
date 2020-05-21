@@ -1,11 +1,9 @@
+<img src="./images/screenshot.PNG" alt="screenshot of webpage" width="500"/>
 # jquery-day-planner
 Plan out your day with this work day scheduler project. 
 
 ## live site
 http://stephenstuder.com/jquery-day-planner/
-
-## screenshot
-<img src="./images/screenshot.PNG" alt="screenshot of webpage" width="500"/>
 
 ## tools used
 Jquery and bootstrap
